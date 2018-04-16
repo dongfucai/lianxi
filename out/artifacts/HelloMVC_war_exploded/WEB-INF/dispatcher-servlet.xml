@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/cache"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                 http://www.springframework.org/schema/cache
+                  http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--对应src下的报名，需要自己新建-->
+  <!--  <context:component-scan base-package="main.java.com.spring.mvc" />
+  -->
+    <context:component-scan base-package="main.java.com.spring.mvc" />
+
+    <mvc:annotation-driven/>
+
+
+
+    <bean name="/welcome.html" class="main.java.com.spring.mvc.WelcomeController"> </bean>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <!-- 这个配置是配置JSP页面的位置，按照你自己的配置来配 -->
+            <value>/WEB-INF/jsp/</value>
+
+            <!--/WEB-INF/jsp 就是错的了-->
+        </property>
+
+
+
+
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+
+    </bean>
+
+
+
+
+</beans>
